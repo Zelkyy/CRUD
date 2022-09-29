@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
+@import '../../index.css';
+
+
+main{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+.alinhamento_divs
+{
+    font-family: 'Inter';
+    display: flex;
+    margin: auto;
+    margin-top: 120px;
+}
+
+/* Topo do Site - Header*/
+header
+{
+    font-family: 'Inter';
+    font-size: 12px;
+    padding: 10px;
+    background-color: #F8F9FA;
+    margin: auto;
+}
+
+.titulo_header{
+    font-size: 24px;
+    font-family: 'Inter';
+    color:#152536;
+    font-weight: bolder;
+}
+
+/* Conteúdo do Site - Main*/
+
+.p-nome{
+    color:#152536;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.p-email{
+    color:#152536;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.div_status{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+} 
+
+.div_descricao
+{
+    margin-left: 39px;
+}
+
+.email{
+    width: 293px;
+    height: 35px;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left; 
+    padding: 0px 10px;
+}
+
+.email::placeholder
+{
+    font-family: 'Inter';
+    color: #ABB5BE;
+}
+
+.p-nome-status
+{
+    margin-bottom: 20px;
+    color:#152536;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 700;
+}
+
+label
+{
+    font-size: 12px;
+}
+
+.checkbox_ativo{
+    margin-bottom: 10px;
+}
+
+.input_pacote{
+    width: 589px;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #CED4DA;
+    text-align: left; 
+    padding: 0px 15px;
+    font-family: 'Inter';
+    font-size: 15px;
+}
+
+input[type="checkbox" i] {
+    background-color: #7749F8;
+    color: #7749F8;
+    accent-color: currentcolor;
+}
+
+.input_pacote::placeholder
+{
+    font-family: 'Inter';
+    font-size: 16px;
+    color: #ABB5BE;
+}
+
+textarea
+{   
+    font-family: 'Inter';
+    border-radius: 4px;
+    border-color: #CED4DA;
+    width: 555px;
+    height: 145px;
+    resize: none;
+    font-size: 16px;
+    padding: 16px 0px 0px 20px;
+}
+
+textarea::placeholder
+{
+    color: #ABB5BE;
+}
+
+.button_register
+{
+    width: 109px;
+    height: 39px;
+    font-size: 16px;
+    background-color:#8458FF;
+    border-radius: 4px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    border: 1px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 72px;
+}
+
+.link-register{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.link-register:hover
+{
+    color: #6C757D;
+}
+
+/* Divs de status (Editar e excluir) */
+
+.pacotes_edicao{
+    margin-bottom: 22px;
+}
+
+.p-nome-status
+{
+    color:#152536;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 900;
+}
+
+
+.descricao_status
+{
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #6C757D;
+    width: 505px;
+    overflow-wrap: break-word;
+}
+
+
+.email-status
+{
+    font-family: 'Inter';
+    font-size: 13px;
+    margin-bottom: 37px;
+    color: #000;
+    font-weight: bolder;
+}
+
+.alinhamento_div_pacote{
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    font-family: 'Inter';
+    width: 1233px;
+    height: 263px;
+    margin-top: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.div_position_pacotes
+{
+    margin-left: 63px;
+}
+
+.buttons{
+    display: inline-flex;
+}
+
+.button_excluir{
+    width: 78px;
+    height: 39px;
+    margin-left: 20px;
+    background-color:#DC3545;
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    border: 1px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button_editar{
+    width: 78px;
+    height: 39px;
+    background-color: #FFC107;
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    border: 1px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.button_editar:hover{
+    color: #152536;
+}
+
+.button_excluir:hover{
+    color: #152536;
+}
+
+.button__editar{
+    width: 109px;
+    height: 39px;
+    background-color: #FFC107;
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    border: 1px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 72px;
+    font-size: 16px;
+}
+
+.botao_editar:hover,
+.button__editar:hover{
+    color: #152536;
+}
+
+/* Rodápe do Site*/
+footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  #F6511D;
+    width: 100%;
+    height: 250px;
+}
+
+.vertical
+{
+    margin-left: 50px;
+    height: 200px;
+    border-right: 1px solid white;
+}
+
+.footer_text
+{
+    margin-left: 45px;
+    font-family: "Roboto";
+    color: white;
+    font-size: 18px;
+}
+
+.title_h1_synctur
+{
+    font-family: "Roboto";
+    margin-bottom: 85px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 40px;
+}
