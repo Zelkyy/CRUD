@@ -2,9 +2,9 @@ import React from "react";
 import '../modal/modal.css';
 import { api } from "../../../api/api";
 
-const Modal = () =>{
+const Modal = () => {
 
-    return(
+    return (
         <div>
             <main>
                 <form>
