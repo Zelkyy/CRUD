@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import '../assets/css/cadastro.css';
 import { api } from "../api/api";
-import { Btn } from "../Components/btn";
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
     const [setGetEmail] = useState([])
+    const navigate = useNavigate();
 
     const ListarEmail = () => {
         api.get('email')
@@ -21,12 +22,11 @@ const Cadastro = () => {
     const [nomeUsuario, setNomeUsuario] = useState('')
     const [descricao, setDescricao] = useState('')
     const [email, setEmail] = useState('')
-    const [boolean, setBoolean] = useState(false)
-    const [guardarId, setId] = useState(0)
 
     const Register = () => {
         if (nomeUsuario != '' && email != '' && descricao != '') {
             api.post(`email`, { nome: nomeUsuario, descricao: descricao, email: email })
+            navigate('/registros')
         }
         else {
             Swal.fire({
@@ -36,11 +36,6 @@ const Cadastro = () => {
                 confirmButtonText: 'OK'
             })
         }
-    }
-
-    const Edit = () => {
-        api.put(`email/${guardarId}`, { nome: nomeUsuario, descricao: descricao, email: email })
-            .then(() => { window.location.reload() })
     }
 
     return (
@@ -81,7 +76,7 @@ const Cadastro = () => {
                     </div>
                 </section>
                 <div id="divButtonRegister">
-                    <Btn trocarbtn={boolean} editar={Edit} cadastrar={Register} />
+                <button className="button_register" onClick={() => {Register()}} >Cadastrar</button>
                 </div>
             </main>
         </>
