@@ -27,8 +27,6 @@ const Cadastro = () => {
     const Register = () => {
         if (nomeUsuario != '' && email != '' && descricao != '') {
             api.post(`email`, { nome: nomeUsuario, descricao: descricao, email: email })
-                .then(() => { window.location.reload() })
-
         }
         else {
             Swal.fire({
