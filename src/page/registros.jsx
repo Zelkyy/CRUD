@@ -4,11 +4,13 @@ import { api } from "../api/api";
 import LoadingSpinner from "../assets/img/loading.svg"
 import EditModal from "../assets/modal/EditModal";
 import { useNavigate } from "react-router-dom";
+import DeleteModal from "../assets/modal/DeleteModal";
 
 export const Page = () => {
     const [getEmail, setGetEmail] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [modal, setModal] = useState('hide')
+    const [loading] = useState(false)
+    const [modalEdit, setModalEdit] = useState('hide')
+    const [modalDelete, setModalDelete] = useState('hide')
     const [getId, setGetId] = useState(0)
     const navigate = useNavigate()
 
@@ -28,26 +30,27 @@ export const Page = () => {
     }, [])
 
 
-    const ShowModal = (estadoAtual, id, item) => {
-        if (estadoAtual === 'hide') {
-            setModal('show')
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    const ShowModalEdit = (estadoAtual, id) => {
+        if(estadoAtual === 'hide'){
+            setModalEdit('show')
         }
-        else {
-            setModal('hide')
+        else{
+            setModalEdit('hide')
         }
 
         setGetId(id)
     }
 
-    async function Delete(id) {
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-            setLoading(true)
-            await api.delete(`email/${id}`)
-    
-                .then(() => { window.location.reload() })
-            setLoading(false)
+    const ShowModalDelete = (estadoAtual, id) => {
+        if(estadoAtual === 'hide'){
+            setModalDelete('show')
         }
+        else{
+            setModalDelete('hide')
+        }
+
+        setGetId(id)
+    }
 
     return (
         <>
@@ -61,7 +64,8 @@ export const Page = () => {
             </header>
             <main>
                 <h2 className="h1-registros">Registros</h2>
-                <EditModal mostrar={modal} funcao={ShowModal} id={getId} />
+            <DeleteModal mostrarDelete={modalDelete} funcaoDelete={ShowModalDelete} id={getId}/>
+            <EditModal mostrar={modalEdit} funcao={ShowModalEdit} id={getId}/>
                 {getEmail.map((item) => {
                     return (
                         <div className="pacotes_edicao" key={item.id}>
@@ -71,8 +75,8 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                        <button className="button_editar" id="buttonEditar" onClick={() => ShowModal(modal, item.id)}>Editar</button>
-                                        <button className="button_excluir" id="buttonExcluir" onClick={() => Delete(item.id)}>Excluir</button>
+                                        <button className="button_editar" id="buttonEditar" onClick={() => ShowModalEdit(modalEdit, item.id)}>Editar</button>
+                                        <button className="button_excluir" id="buttonExcluir" onClick={() => ShowModalDelete(modalDelete, item.id)}>Excluir</button>
                                     </div>
                                 </div>
                             </div>
@@ -80,8 +84,9 @@ export const Page = () => {
                     )
                 })}
                 {loading ? <div className={"fundo_escurecido"} ></div> : false}
-                {loading ? <img src={LoadingSpinner} alt="Loading" style={{ width: 250, position: 'absolute', left: "50%", top: "50%", marginLeft: "-110px", marginTop: "-100px", zIndex: 10 }}></img> : false}
-                <div className={"fundo_escurecido " + modal} ></div>
+                {loading ? <img src={LoadingSpinner} alt="Loading" style={{ width: 250, position:'absolute', left: "50%", top: "50%", marginLeft: "-110px", marginTop: "-100px", zIndex: 10  }}></img> : false}
+                <div className={"fundo_escurecido " + modalEdit} ></div>
+                <div className={"fundo_escurecido " + modalDelete} ></div>
             </main>
         </>
     )
