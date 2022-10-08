@@ -1,164 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
 @import '../../index.css';
 
-
-main{
-    display: flex;
-    margin: auto;
-    align-items: center;
-    flex-direction: column;
+.seta{
+    padding: 8px;
+    box-shadow: 2px -2px 0 1px #000 inset;
+    border: solid transparent;
+    border-width: 0 0 2px 2px;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
 
-.alinhamento_divs
-{
-    font-family: 'Inter';
-    display: flex;
-    margin: auto;
-    margin-top: 120px;
-}
-
-/* Topo do Site - Header*/
-header
-{
-    font-family: 'Inter';
-    font-size: 12px;
-    padding: 10px;
-    background-color: #F8F9FA;
-    margin: auto;
-}
-
-.titulo_header{
-    font-size: 24px;
+.h1-registros{
+    font-size: 32px;
     font-family: 'Inter';
     color:#152536;
     font-weight: bolder;
-}
-
-/* Conteúdo do Site - Main*/
-
-.p-nome{
-    color:#152536;
-    font-family: 'Inter';
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.p-email{
-    color:#152536;
-    font-family: 'Inter';
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 25px;
-}
-
-.div_status{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-} 
-
-.div_descricao
-{
-    margin-left: 39px;
-}
-
-.email{
-    width: 293px;
-    height: 35px;
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
-    font-size: 14px;
-    text-align: left; 
-    padding: 0px 10px;
-}
-
-.email::placeholder
-{
-    font-family: 'Inter';
-    color: #ABB5BE;
-}
-
-.p-nome-status
-{
-    margin-bottom: 20px;
-    color:#152536;
-    font-family: 'Inter';
-    font-size: 24px;
-    font-weight: 700;
-}
-
-label
-{
-    font-size: 12px;
-}
-
-.checkbox_ativo{
-    margin-bottom: 10px;
-}
-
-.input_pacote{
-    width: 589px;
-    height: 34px;
-    border-radius: 4px;
-    border: 1px solid #CED4DA;
-    text-align: left; 
-    padding: 0px 15px;
-    font-family: 'Inter';
-    font-size: 15px;
-}
-
-input[type="checkbox" i] {
-    background-color: #7749F8;
-    color: #7749F8;
-    accent-color: currentcolor;
-}
-
-.input_pacote::placeholder
-{
-    font-family: 'Inter';
-    font-size: 16px;
-    color: #ABB5BE;
-}
-
-textarea
-{   
-    font-family: 'Inter';
-    border-radius: 4px;
-    border-color: #CED4DA;
-    width: 555px;
-    height: 145px;
-    resize: none;
-    font-size: 16px;
-    padding: 16px 0px 0px 20px;
-}
-
-textarea::placeholder
-{
-    color: #ABB5BE;
-}
-
-.button_register
-{
-    width: 109px;
-    height: 39px;
-    font-size: 16px;
-    background-color:#8458FF;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Inter';
-    border: 1px;
-    cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 72px;
-    color: #FFFFFF;
-}
-
-.button_register:hover
-{
-    color: #6C757D;
+    margin: 25px 0 10px 0;
 }
 
 /* Divs de status (Editar e excluir) */
@@ -277,37 +134,30 @@ textarea::placeholder
     color: #152536;
 }
 
-/* Rodápe do Site*/
-footer
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:  #F6511D;
-    width: 100%;
-    height: 250px;
+/* modal */
+
+.fundo_escurecido_modal{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    right: 0;
+    left: 0; 
+    top: 0;
+    bottom: 0;
+    position: fixed;
 }
 
-.vertical
-{
-    margin-left: 50px;
-    height: 200px;
-    border-right: 1px solid white;
+.fundo_escurecido{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    right: 0;
+    left: 0; 
+    top: 0;
+    bottom: 0;
+    position: fixed;
 }
 
-.footer_text
-{
-    margin-left: 45px;
-    font-family: "Roboto";
-    color: white;
-    font-size: 18px;
-}
-
-.title_h1_synctur
-{
-    font-family: "Roboto";
-    margin-bottom: 85px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 40px;
+.background_hide{
+    display: none;
 }

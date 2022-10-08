@@ -1,1 +1,104 @@
-@import '../../index.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
+@import '../../../index.css';
+
+.EditModal 
+{
+    width: 900px;
+    height: 449px;
+    background: #fff;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 175px;
+    z-index: 10;
+}
+
+.alinhamentoExcluirModal
+{
+    width: 900px;
+    height: 10px;
+    background: #101010;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px 20px 20px;
+}
+
+.excluirModal
+{
+    background: transparent;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.cardTxt h1 
+{
+    font-size: 40px;
+    font-family: 'Inter';
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4vw;
+}
+
+.AlinhamentoInputModal
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputModal 
+{
+    height: 49px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 5px 0px 0px 24px;
+}
+
+.selectModal
+{
+    width: 271px;
+    height: 49px;
+    margin-left: 20px;
+}
+
+.AlinhamentoModalSalvar
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.btnSalvarModal
+{
+    width: 120px;
+    height: 49px;
+    background-color: #8458FF;
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btnSalvarModal:hover
+{
+    color: #000000;
+}
+
+.vermelho{
+    color: red;
+}
+
+.show 
+{
+    display: flex;
+}
+
+.hide 
+{
+    display: none;
+}

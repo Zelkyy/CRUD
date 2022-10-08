@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import '../assets/css/cadastro.css';
 import { api } from "../api/api";
@@ -24,9 +25,10 @@ const Cadastro = () => {
     const [email, setEmail] = useState('')
 
     const Register = () => {
-        if (nomeUsuario != '' && email != '' && descricao != '') {
+        if (nomeUsuario !== '' && email !== '' && descricao !== '') {
             api.post(`email`, { nome: nomeUsuario, descricao: descricao, email: email })
             navigate('/registros')
+                .then(() => { window.location.reload() })
         }
         else {
             Swal.fire({
@@ -50,7 +52,7 @@ const Cadastro = () => {
                         <p className="p-nome">Nome Completo</p>
                         <div>
                             <input id="inputPacote" className="input_pacote" type="text"
-                                maxLength="20"
+                                maxLength="40"
                                 placeholder="Digite nome completo"
                                 value={nomeUsuario}
                                 onChange={(estado) => setNomeUsuario(estado.target.value)} />
@@ -76,7 +78,7 @@ const Cadastro = () => {
                     </div>
                 </section>
                 <div id="divButtonRegister">
-                <button className="button_register" onClick={() => {Register()}} >Cadastrar</button>
+                    <button className="button_register" onClick={() => { Register() }} >Cadastrar</button>
                 </div>
             </main>
         </>
