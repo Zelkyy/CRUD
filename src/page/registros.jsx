@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import '../assets/css/registros.css'
 import { api } from "../api/api";
 import LoadingSpinner from "../assets/img/loading.svg"
-import EditModal from "../assets/css/modal/EditModal";
+import EditModal from "../assets/modal/EditModal";
 import { useNavigate } from "react-router-dom";
 
 export const Page = () => {
@@ -41,13 +41,13 @@ export const Page = () => {
     }
 
     async function Delete(id) {
-        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-        setLoading(true)
-        await api.delete(`email/${id}`)
-
-            .then(() => { window.location.reload() })
-        setLoading(false)
-    }
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+            setLoading(true)
+            await api.delete(`email/${id}`)
+    
+                .then(() => { window.location.reload() })
+            setLoading(false)
+        }
 
     return (
         <>

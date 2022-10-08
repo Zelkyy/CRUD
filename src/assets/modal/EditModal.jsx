@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import LoadingSpinner from "../../img/blackLoading.svg"
-import { api } from "../../../api/api";
+import LoadingSpinner from "../img/blackLoading.svg";
+import { api } from "../../api/api";
 import "../modal/modal.css";
 
 const EditModal = (props) => {
@@ -37,21 +37,21 @@ const EditModal = (props) => {
           <div className="AlinhamentoInputModal">
             <input
               type="text"
-              placeholder=""
+              placeholder="Nome completo"
               className="inputModal"
               value={nomeUsuario}
               onChange={(e) => setNomeUsuario(e.target.value)}
             />
             <input
               type="text"
-              placeholder=""
+              placeholder="Descrição"
               className="inputModal"
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
             />
             <input
               type="text"
-              placeholder=""
+              placeholder="Email"
               className="inputModal"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
