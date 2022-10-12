@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import LoadingSpinner from "../img/blackLoading.svg";
 import { api } from "../../api/api";
@@ -23,6 +23,15 @@ const EditModal = (props) => {
       setWarning(true)
     }
   }
+
+  useEffect(() =>{
+    if(props.item !== undefined){
+
+      setNomeUsuario(props.item.nome)
+      setEmail(props.item.email)
+      setDescricao(props.item.descricao)
+    }
+  }, [props.item])
 
   return (
     <>

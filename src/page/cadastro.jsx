@@ -43,7 +43,14 @@ const Cadastro = () => {
     return (
         <>
             <header>
-                <h1 className="titulo_header">SyncTur</h1>
+                <div>
+                    <h1 className="titulo_header">SyncTur</h1>
+                </div>
+                <div className="registros">
+                    <nav>
+                        <a href="registros" >Registro</a>
+                    </nav>
+                </div>
             </header>
 
             <main>

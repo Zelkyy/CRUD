@@ -12,6 +12,7 @@ export const Page = () => {
     const [modalEdit, setModalEdit] = useState('hide')
     const [modalDelete, setModalDelete] = useState('hide')
     const [getId, setGetId] = useState(0)
+    const [item, setItem] = useState()
     const navigate = useNavigate()
 
     const ListarEmail = () => {
@@ -29,8 +30,7 @@ export const Page = () => {
         ListarEmail()
     }, [])
 
-
-    const ShowModalEdit = (estadoAtual, id) => {
+    const ShowModalEdit = (estadoAtual, id, item) => {
         if(estadoAtual === 'hide'){
             setModalEdit('show')
         }
@@ -38,7 +38,10 @@ export const Page = () => {
             setModalEdit('hide')
         }
 
+        console.log(item);
+        setItem(item)
         setGetId(id)
+        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     const ShowModalDelete = (estadoAtual, id) => {
@@ -50,6 +53,7 @@ export const Page = () => {
         }
 
         setGetId(id)
+        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     return (
@@ -65,7 +69,7 @@ export const Page = () => {
             <main>
                 <h2 className="h1-registros">Registros</h2>
             <DeleteModal mostrarDelete={modalDelete} funcaoDelete={ShowModalDelete} id={getId}/>
-            <EditModal mostrar={modalEdit} funcao={ShowModalEdit} id={getId}/>
+            <EditModal item={item} mostrar={modalEdit} funcao={ShowModalEdit} id={getId}/>
                 {getEmail.map((item) => {
                     return (
                         <div className="pacotes_edicao" key={item.id}>
@@ -75,7 +79,7 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                        <button className="button_editar" id="buttonEditar" onClick={() => ShowModalEdit(modalEdit, item.id)}>Editar</button>
+                                    <button className="button_editar" id="buttonEditar" onClick={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</button>
                                         <button className="button_excluir" id="buttonExcluir" onClick={() => ShowModalDelete(modalDelete, item.id)}>Excluir</button>
                                     </div>
                                 </div>
