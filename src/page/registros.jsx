@@ -5,7 +5,7 @@ import LoadingSpinner from "../assets/img/loading.svg"
 import EditModal from "../assets/modal/EditModal";
 import { useNavigate } from "react-router-dom";
 import DeleteModal from "../assets/modal/DeleteModal";
-import Botão from "../Components/btnDelete";
+import Button from "../Components/Botão";
 
 export const Page = () => {
     const [getEmail, setGetEmail] = useState([])
@@ -32,10 +32,10 @@ export const Page = () => {
     }, [])
 
     const ShowModalEdit = (estadoAtual, id, item) => {
-        if(estadoAtual === 'hide'){
+        if (estadoAtual === 'hide') {
             setModalEdit('show')
         }
-        else{
+        else {
             setModalEdit('hide')
         }
 
@@ -44,11 +44,11 @@ export const Page = () => {
         window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
-    const ShowModalDelete = (estadoAtual, id, item) => {
-        if(estadoAtual === 'hide'){
+    const ShowModalDelete = (estadoAtual, id) => {
+        if (estadoAtual === 'hide') {
             setModalDelete('show')
         }
-        else{
+        else {
             setModalDelete('hide')
         }
 
@@ -68,8 +68,8 @@ export const Page = () => {
             </header>
             <main>
                 <h2 className="h1-registros">Registros</h2>
-            <DeleteModal mostrarDelete={modalDelete} funcaoDelete={ShowModalDelete} id={getId}/>
-            <EditModal item={item} mostrar={modalEdit} funcao={ShowModalEdit} id={getId}/>
+                <DeleteModal mostrarDelete={modalDelete} funcaoDelete={ShowModalDelete} id={getId} />
+                <EditModal item={item} mostrar={modalEdit} funcao={ShowModalEdit} id={getId} />
                 {getEmail.map((item) => {
                     return (
                         <div className="pacotes_edicao" key={item.id}>
@@ -79,8 +79,8 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                    <Botão class={"button_editar"} acao={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</Botão>
-                                    <Botão class={"button_excluir"} acao={() => ShowModalDelete(modalDelete, item.id)} >Excluir</Botão>
+                                        <Button class={"button_editar"} action={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</Button>
+                                        <Button class={"button_excluir"} action={() => ShowModalDelete(modalDelete, item.id)} >Excluir</Button>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ export const Page = () => {
                     )
                 })}
                 {loading ? <div className={"fundo_escurecido"} ></div> : false}
-                {loading ? <img src={LoadingSpinner} alt="Loading" style={{ width: 250, position:'absolute', left: "50%", top: "50%", marginLeft: "-110px", marginTop: "-100px", zIndex: 10  }}></img> : false}
+                {loading ? <img src={LoadingSpinner} alt="Loading" style={{ width: 250, position: 'absolute', left: "50%", top: "50%", marginLeft: "-110px", marginTop: "-100px", zIndex: 10 }}></img> : false}
                 <div className={"fundo_escurecido " + modalEdit} ></div>
                 <div className={"fundo_escurecido " + modalDelete} ></div>
             </main>

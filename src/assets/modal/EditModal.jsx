@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import LoadingSpinner from "../img/blackLoading.svg";
 import { api } from "../../api/api";
-import "../modal/modal.css";
+import Button from '../../Components/Botão'
+import "../css/EditModal.css";
 
 const EditModal = (props) => {
 
@@ -24,8 +25,8 @@ const EditModal = (props) => {
     }
   }
 
-  useEffect(() =>{
-    if(props.item !== undefined){
+  useEffect(() => {
+    if (props.item !== undefined) {
 
       setNomeUsuario(props.item.nome)
       setEmail(props.item.email)
@@ -37,7 +38,7 @@ const EditModal = (props) => {
     <>
       <div className={"EditModal " + props.mostrar}>
         <div className="alinhamentoExcluirModal">
-          <button className="excluirModal" onClick={props.funcao}>X</button>
+          <Button class={"excluirModal"} action={props.funcao}>X</Button>
         </div>
 
         <div className="cardTxt">
@@ -70,7 +71,7 @@ const EditModal = (props) => {
             )}
 
             <div className="AlinhamentoModalSalvar">
-              <button className="btnSalvarModal" onClick={() => Editar(props.id)}>Salvar</button>
+              <Button class={"btnSalvarModal"} action={() => Editar(props.id)}>Salvar</Button>
             </div>
           </div>
         </div>

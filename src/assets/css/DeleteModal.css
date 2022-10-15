@@ -1,7 +1,6 @@
 @import "../../index.css";
 
-.DeleteModal 
-{
+.DeleteModal {
     width: 900px;
     height: 449px;
     background: #fff;
@@ -12,27 +11,26 @@
     z-index: 10;
 }
 
-.alinhamentoModalDelete
-{
+.alinhamentoModalDelete {
     width: 900px;
     height: 10px;
     background: #101010;
     padding: 20px 30px 20px 20px;
 }
 
-.cardTxtDelete h1{
+.cardTxtDelete h1 {
     font-size: 40px;
     font-family: 'Inter';
     color: #000;
     margin: 0 0 100px 0;
 }
 
-.alinhamentoBtnModal{
+.alinhamentoBtnModal {
     display: flex;
     justify-content: center;
 }
 
-.btnVoltarModal{
+.btnVoltarModal {
     width: 120px;
     height: 49px;
     background-color: #FFC107;
@@ -43,12 +41,11 @@
     margin-right: 20px;
 }
 
-.btnVoltarModal:hover
-{
+.btnVoltarModal:hover {
     color: #000000;
 }
 
-.btnDeleteModal{
+.btnDeleteModal {
     width: 120px;
     height: 49px;
     background-color: red;
@@ -58,6 +55,6 @@
     cursor: pointer;
 }
 
-.btnDeleteModal:hover{
+.btnDeleteModal:hover {
     color: black;
 }

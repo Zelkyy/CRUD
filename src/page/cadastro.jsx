@@ -4,6 +4,7 @@ import '../assets/css/cadastro.css';
 import { api } from "../api/api";
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import Button from "../Components/Botão";
 
 const Cadastro = () => {
     const [setGetEmail] = useState([])
@@ -27,8 +28,8 @@ const Cadastro = () => {
     const Register = () => {
         if (nomeUsuario !== '' && email !== '' && descricao !== '') {
             api.post(`email`, { nome: nomeUsuario, descricao: descricao, email: email })
-            navigate('/registros')
                 .then(() => { window.location.reload() })
+            navigate('/registros')
         }
         else {
             Swal.fire({
@@ -85,7 +86,7 @@ const Cadastro = () => {
                     </div>
                 </section>
                 <div id="divButtonRegister">
-                    <button className="button_register" onClick={() => { Register() }} >Cadastrar</button>
+                    <Button class={"button_register"} action={() => { Register() }} >Cadastrar</Button>
                 </div>
             </main>
         </>

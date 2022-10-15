@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import LoadingSpinner from "../img/blackLoading.svg";
 import { api } from "../../api/api";
-import "../modal/DeleteModal.css";
+import "../css/DeleteModal.css";
+import Button from "../../Components/Botão";
 
 const DeleteModal = (props) => {
 
@@ -26,10 +27,10 @@ const DeleteModal = (props) => {
                     <h1>Deseja Deletar o Registro?</h1>
 
                     <div className="alinhamentoBtnModal">
-                        <button className="btnVoltarModal" onClick={props.funcaoDelete}>Não</button>
+                        <Button class={"btnVoltarModal"} action={props.funcaoDelete}>Não</Button>
 
                         <div className="AlinhamentoDeleteModal">
-                            <button className="btnDeleteModal" onClick={() => Delete(props.id)}>Sim</button>
+                            <Button class={"btnDeleteModal"} action={() => Delete(props.id)}>Sim</Button>
                         </div>
                     </div>
                 </div>

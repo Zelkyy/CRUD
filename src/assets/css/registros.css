@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
 @import '../../index.css';
 
-.seta{
+.seta {
     padding: 8px;
     box-shadow: 2px -2px 0 1px #000 inset;
     border: solid transparent;
@@ -10,31 +10,29 @@
     cursor: pointer;
 }
 
-.h1-registros{
+.h1-registros {
     font-size: 32px;
     font-family: 'Inter';
-    color:#152536;
+    color: #152536;
     font-weight: bolder;
     margin: 25px 0 10px 0;
 }
 
 /* Divs de status (Editar e excluir) */
 
-.pacotes_edicao{
+.pacotes_edicao {
     margin-bottom: 22px;
 }
 
-.p-nome-status
-{
-    color:#152536;
+.p-nome-status {
+    color: #152536;
     font-family: 'Inter';
     font-size: 24px;
     font-weight: 900;
 }
 
 
-.descricao_status
-{
+.descricao_status {
     margin-top: 24px;
     margin-bottom: 10px;
     font-size: 16px;
@@ -44,8 +42,7 @@
 }
 
 
-.email-status
-{
+.email-status {
     font-family: 'Inter';
     font-size: 13px;
     margin-bottom: 37px;
@@ -53,7 +50,7 @@
     font-weight: bolder;
 }
 
-.alinhamento_div_pacote{
+.alinhamento_div_pacote {
     border: 1px solid #DEE2E6;
     border-radius: 4px;
     font-family: 'Inter';
@@ -65,20 +62,19 @@
     align-items: center;
 }
 
-.div_position_pacotes
-{
+.div_position_pacotes {
     margin-left: 63px;
 }
 
-.buttons{
+.buttons {
     display: inline-flex;
 }
 
-.button_excluir{
+.button_excluir {
     width: 78px;
     height: 39px;
     margin-left: 20px;
-    background-color:#DC3545;
+    background-color: #DC3545;
     border-radius: 4px;
     color: #FFFFFF;
     display: flex;
@@ -90,7 +86,7 @@
     font-size: 16px;
 }
 
-.button_editar{
+.button_editar {
     width: 78px;
     height: 39px;
     background-color: #FFC107;
@@ -104,15 +100,16 @@
     cursor: pointer;
     font-size: 16px;
 }
-.button_editar:hover{
+
+.button_editar:hover {
     color: #152536;
 }
 
-.button_excluir:hover{
+.button_excluir:hover {
     color: #152536;
 }
 
-.button__editar{
+.button__editar {
     width: 109px;
     height: 39px;
     background-color: #FFC107;
@@ -130,34 +127,34 @@
 }
 
 .botao_editar:hover,
-.button__editar:hover{
+.button__editar:hover {
     color: #152536;
 }
 
 /* modal */
 
-.fundo_escurecido_modal{
+.fundo_escurecido_modal {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.75);
     right: 0;
-    left: 0; 
+    left: 0;
     top: 0;
     bottom: 0;
     position: fixed;
 }
 
-.fundo_escurecido{
+.fundo_escurecido {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.75);
     right: 0;
-    left: 0; 
+    left: 0;
     top: 0;
     bottom: 0;
     position: fixed;
 }
 
-.background_hide{
+.background_hide {
     display: none;
 }
