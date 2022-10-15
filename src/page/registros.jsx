@@ -5,6 +5,7 @@ import LoadingSpinner from "../assets/img/loading.svg"
 import EditModal from "../assets/modal/EditModal";
 import { useNavigate } from "react-router-dom";
 import DeleteModal from "../assets/modal/DeleteModal";
+import Botão from "../Components/btnDelete";
 
 export const Page = () => {
     const [getEmail, setGetEmail] = useState([])
@@ -38,13 +39,12 @@ export const Page = () => {
             setModalEdit('hide')
         }
 
-        console.log(item);
         setItem(item)
         setGetId(id)
         window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
-    const ShowModalDelete = (estadoAtual, id) => {
+    const ShowModalDelete = (estadoAtual, id, item) => {
         if(estadoAtual === 'hide'){
             setModalDelete('show')
         }
@@ -79,8 +79,8 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                    <button className="button_editar" id="buttonEditar" onClick={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</button>
-                                        <button className="button_excluir" id="buttonExcluir" onClick={() => ShowModalDelete(modalDelete, item.id)}>Excluir</button>
+                                    <Botão class={"button_editar"} acao={() => ShowModalEdit(modalEdit, item.id, item)} children="Editar"/>
+                                    <Botão class={"button_excluir"} acao={() => ShowModalDelete(modalDelete, item.id)} children="Excluir"/>
                                     </div>
                                 </div>
                             </div>
