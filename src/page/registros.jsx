@@ -79,8 +79,8 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                    <Botão class={"button_editar"} acao={() => ShowModalEdit(modalEdit, item.id, item)} children="Editar"/>
-                                    <Botão class={"button_excluir"} acao={() => ShowModalDelete(modalDelete, item.id)} children="Excluir"/>
+                                    <Botão class={"button_editar"} acao={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</Botão>
+                                    <Botão class={"button_excluir"} acao={() => ShowModalDelete(modalDelete, item.id)} >Excluir</Botão>
                                     </div>
                                 </div>
                             </div>
