@@ -5,7 +5,7 @@ import LoadingSpinner from "../assets/img/loading.svg"
 import EditModal from "../assets/modal/EditModal";
 import { useNavigate } from "react-router-dom";
 import DeleteModal from "../assets/modal/DeleteModal";
-import Botão from "../Components/btnDelete";
+import Button from "../Components/Botão";
 
 export const Page = () => {
     const [getEmail, setGetEmail] = useState([])
@@ -79,8 +79,8 @@ export const Page = () => {
                                     <p className="descricao_status">{item.descricao}</p>
                                     <p className="email-status">Email: {item.email}</p>
                                     <div className="buttons">
-                                    <Botão class={"button_editar"} acao={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</Botão>
-                                    <Botão class={"button_excluir"} acao={() => ShowModalDelete(modalDelete, item.id)} >Excluir</Botão>
+                                    <Button class={"button_editar"} action={() => ShowModalEdit(modalEdit, item.id, item)}>Editar</Button>
+                                    <Button class={"button_excluir"} action={() => ShowModalDelete(modalDelete, item.id)} >Excluir</Button>
                                     </div>
                                 </div>
                             </div>
